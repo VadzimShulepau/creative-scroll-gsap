@@ -1,0 +1,136 @@
+/* @import 'normalize.css'; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --color-header: #f4efec;
+  --color-text: #cdc6c3;
+  --gallery-gap: calc(var(--index) * 10);
+}
+
+@font-face {
+  font-family: raleway-c;
+  src: url('@fonts/raleway-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: outfit-c;
+  src: url('@fonts/outfit-regular.woff2') format('woff2');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: outfit-c;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  height: 100%;
+  flex-direction: column;
+  background: url('@images/bg.jpg') center / 10% repeat;
+  color: var(--color-text);
+  font-family: railway-c;
+  width: 100%;
+  overflow-x: hidden;
+  /* overflow: hidden; */
+}
+
+.hero-img {
+  width: calc(var(--index) * 36);
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  padding: 0 7vw;
+  width: 100%;
+}
+
+.main-header {
+  height: 100vh;
+}
+
+.main-title {
+  font-size: calc(var(--index) * 8);
+  position: absolute;
+  width: min-content;
+  line-height: 0.9;
+  bottom: 4vh;
+}
+
+.gallery {
+  display: flex;
+  padding: calc(var(--index) * 8) 0;
+}
+
+.gallery-column {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gallery__item {
+  max-width: calc(var(--index) * 21);
+  max-height: 180vh;
+  margin-bottom: var(--gallery-gap);
+  border-radius: 8px;
+}
+
+.gallery-column--left {
+  margin-top: calc(var(--gallery-gap * 1.75));
+}
+
+.gallery-column--right {
+  .gallery__item {
+    margin: 0;
+    margin-top: var(--gallery-gap);
+  }
+}
+
+.text-block {
+  position: relative;
+  color: var(--color-text);
+}
+
+.text-block__title {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--color-header);
+  margin-bottom: 1.5rem;
+}
+
+.text-block__paragraph {
+  line-height: 1.75;
+}
+
+/* will-change */
+.content,
+.hero-img,
+.main-header,
+.gallery-column--right,
+.gallery-column--left {
+  will-change: transform;
+}
+
+footer {
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid var(--color-text);
+  padding: 1rem;
+}
